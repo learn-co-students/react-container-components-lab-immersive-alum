@@ -4,7 +4,7 @@ import MovieReviews from './MovieReviews.js'
 import 'isomorphic-fetch';
 
 const KEY = '94faf6eeb9f0410c9d9e616cd4d2fc6e'
-let URL = `https://api.nytimes.com/svc/movies/v2/reviews/search.json?api-key=${KEY}?query=`
+let URL = `https://api.nytimes.com/svc/movies/v2/reviews/search.json?api-key=${KEY}&query=`
 
 class SearchableMovieReviewsContainer extends React.Component {
   constructor(){
@@ -20,7 +20,7 @@ class SearchableMovieReviewsContainer extends React.Component {
   }
 
   updateSearch(e){
-      this.setState({searchTerm: e.target.details})
+      this.setState({searchTerm: e.target.value})
   }
 
   componentWillMount(){
